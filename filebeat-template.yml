@@ -1,0 +1,41 @@
+
+#
+# You can find the full configuration reference here:
+# https://www.elastic.co/guide/en/beats/filebeat/index.html
+
+
+path.data: ${ProgramData:C:\ProgramData}\GPII\Filebeat
+path.logs: ${ProgramData:C:\ProgramData}\GPII\Filebeat\logs
+
+#================================ Outputs =====================================
+
+# Configure what outputs to use when sending the data collected by the beat.
+# Multiple outputs may be used.
+
+#-------------------------- Elasticsearch output ------------------------------
+output.elasticsearch:
+  # Array of hosts to connect to.
+  hosts: ["INSERT_HOSTNAME_HERE:443"]
+  protocol: "https"
+  username: "INSERT_USERNAME_HERE"
+  password: "INSERT_PASSWORD_HERE"
+  index: "gpii-%{+yyyy.MM.dd}"
+
+
+#=========================== Filebeat prospectors =============================
+
+filebeat.prospectors:
+
+# Each - is a prospector. Most options can be set at the prospector level, so
+# you can use different prospectors for various configurations.
+# Below are the prospector specific configurations.
+
+- input_type: log
+
+  # Paths that should be crawled and fetched. Glob based paths.
+  paths:
+    - C:\Users\*\AppData\Roaming\gpii\*.log
+    #- C:\KEEP_GPII\gpii\*.log
+
+  json.keys_under_root: false
+  json.add_error_key: true
