@@ -34,7 +34,7 @@ filebeat.prospectors:
 
   # Paths that should be crawled and fetched. Glob based paths.
   paths:
-    - C:\Users\*\AppData\Roaming\gpii\*.log
+    - C:\Users\*\AppData\Roaming\gpii\gpii-20*-*.log
     #- C:\KEEP_GPII\gpii\*.log
 
   json.keys_under_root: false
