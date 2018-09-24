@@ -3,3 +3,4 @@
 *.wixobj
 filebeat.yml
 /output/
+es-credentials.json

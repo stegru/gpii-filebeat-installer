@@ -5,9 +5,15 @@ GPII installer install and start the filebeat service.
 
 ## Usage
 
-* Copy [filebeat-template.yml](filebeat-template.yml) into [filebeat/](filebeat/)filebeat.yml
-* Add the elastic search credentials into the new file in the appropriate place.
-* Run [build.bat](build.bat)
+* Create `es-credentials.json`, containing the following:
+```json
+{
+    "host": "the real hostname",
+    "username": "the real user name",
+    "password": "the real password"
+}
+```
+* Run [build.ps1](build.ps1)
 * Take `output/filebeat.msm`.
 
-Don't commit `filebeat.yml` or `filebeat.msm`, because they contain credentials.
+Don't commit `es-credentials.json`, `filebeat.yml` or `filebeat.msm`, because they contain credentials.
