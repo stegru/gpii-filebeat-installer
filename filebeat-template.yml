@@ -4,8 +4,8 @@
 # https://www.elastic.co/guide/en/beats/filebeat/index.html
 
 
-path.data: ${ProgramData:C:\ProgramData}\GPII\Filebeat
-path.logs: ${ProgramData:C:\ProgramData}\GPII\Filebeat\logs
+path.data: ${ProgramData:C:\ProgramData}\Morphic\Filebeat
+path.logs: ${ProgramData:C:\ProgramData}\Morphic\Filebeat\logs
 
 #================================ Outputs =====================================
 

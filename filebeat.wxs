@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
   <?define SourceDir="."?>
-  <Module Id="GPII.FileBeat" Language="1033" Version="1.0.0.0">
+  <Module Id="Morphic.FileBeat" Language="1033" Version="1.0.0.0">
     <Package Id="f01df4e6-be28-4a7a-9e24-ede26d2f052f"
              Manufacturer="Raising the Floor"
              InstallerVersion="405"
@@ -23,15 +23,15 @@
           <File Id="fb7" Source="filebeat\.build_hash.txt" />
 
           <ServiceInstall Id="FilebeatServiceInstall"
-                          Name="gpii-filebeat"
-                          DisplayName="gpii-filebeat"
-                          Description="GPII Logging"
+                          Name="morphic-filebeat"
+                          DisplayName="morphic-filebeat"
+                          Description="Morphic Logging"
                           ErrorControl="normal"
                           Start="auto"
                           Type="ownProcess"
                           Arguments="-c &quot;[MergeRedirectFolder]filebeat.yml&quot;" />
 
-          <ServiceControl Id="FilebeatServiceControl" Name="gpii-filebeat" Start="install" Stop="both" Remove="both" Wait="yes" />
+          <ServiceControl Id="FilebeatServiceControl" Name="morphic-filebeat" Start="install" Stop="both" Remove="both" Wait="yes" />
         </Component>
       </Directory>
     </Directory>
